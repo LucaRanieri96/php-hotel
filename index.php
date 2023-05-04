@@ -58,7 +58,6 @@ $hotels = [
   <table class="table">
     <thead>
       <tr>
-        <th scope="col">#</th>
         <th scope="col">Name</th>
         <th scope="col">Description</th>
         <th scope="col">Parking</th>
@@ -76,7 +75,7 @@ $hotels = [
             <?php echo $hotel['description']; ?>
           </td>
           <td>
-            <?php echo $hotel['parking']; ?>
+            <?php echo $hotel['parking'] ? "true" : "false"; ?>
           </td>
           <td>
             <?php echo $hotel['vote']; ?>
