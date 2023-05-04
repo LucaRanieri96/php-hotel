@@ -43,12 +43,18 @@ function filterHotelsByParking($hotels, $parking) {
   $filteredHotels = [];
 
   foreach ($hotels as $hotel) {
-    
+
     if ($hotel['parking'] === $parking) {
       $filteredHotels[] = $hotel;
     }
   }
   return $filteredHotels;
+}
+
+if ($_GET["parking"] === "true") {
+  $filteredHotels = filterHotelsByParking($hotels, $_GET['parking']);
+} else {
+  $filteredHotels = $hotels;
 }
 
 ?>
@@ -68,13 +74,13 @@ function filterHotelsByParking($hotels, $parking) {
 </head>
 
 <body>
-  <form method="get">
+  <form method="GET">
     <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="parking">
+      <input type="checkbox" class="form-check-input" id="parking" name="parking" value="true">
       <label class="form-check-label" for="parking">Filtro per parcheggio</label>
     </div>
     <div class="mb-3 form-check">
-      <input type="number" id="vote">
+      <input type="number" id="vote" name="vote">
       <label class="form-check-label" for="vote">Filtro per voto</label>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
@@ -92,7 +98,7 @@ function filterHotelsByParking($hotels, $parking) {
       </tr>
     </thead>
     <tbody>
-      <?php foreach ($hotels as $hotel): ?>
+      <?php foreach ($filteredHotels as $hotel): ?>
         <tr>
           <td>
             <?php echo $hotel['name']; ?>
