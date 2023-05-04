@@ -44,14 +44,14 @@ function filterHotelsByParking($hotels, $parking) {
 
   foreach ($hotels as $hotel) {
 
-    if ($hotel['parking'] === $parking) {
+    if ($hotel['parking']) {
       $filteredHotels[] = $hotel;
     }
   }
   return $filteredHotels;
 }
 
-if ($_GET["parking"] === "true") {
+if ($_GET["parking"]) {
   $filteredHotels = filterHotelsByParking($hotels, $_GET['parking']);
 } else {
   $filteredHotels = $hotels;
@@ -80,7 +80,7 @@ if ($_GET["parking"] === "true") {
       <label class="form-check-label" for="parking">Filtro per parcheggio</label>
     </div>
     <div class="mb-3 form-check">
-      <input type="number" id="vote" name="vote">
+      <input type="number" id="vote" name="vote" min="0" max="5">
       <label class="form-check-label" for="vote">Filtro per voto</label>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
