@@ -95,7 +95,7 @@ if ($_GET["vote"] && isset($filteredHotels)) {
 <body>
 
   <h1 class="text-center mt-4">FILTRO PER HOTEL</h1>
-  <p class="text-center mb-4">filto un'array di hotel per parcheggio, voto o entrambi</p>
+  <p class="text-center mb-4">Filtro un'array di hotel per parcheggio, voto o entrambi</p>
 <div class="container">
   <form method="GET" class="d-flex">
     <div class="mb-3 form-check">
@@ -106,7 +106,7 @@ if ($_GET["vote"] && isset($filteredHotels)) {
       <input class="number" type="number" id="vote" name="vote" min="0" max="5">
       <label class="form-check-label" for="vote">Filtro per voto</label>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-warning">FILTRA</button>
   </form>
 
 
