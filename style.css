@@ -1,0 +1,23 @@
+body{
+    background-color: #121212;
+    color: white;
+}
+h1{
+    color: rgb(249, 197, 9);
+}
+table{
+    background-color: rgba(249, 197, 9, 0.6);
+    margin: 2rem 0;
+    color: white !important;
+}
+input.number{
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding-left: 1rem;
+}
+
+.btn{
+    height: fit-content;
+    margin: 0rem 1rem;
+    padding: 0.2rem;
+}
