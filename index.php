@@ -68,8 +68,8 @@ if ($_GET["parking"]) {
   $filteredHotels = $hotels;
 }
 
-if ($_GET["vote"] === $hotels["vote"]) {
-  $filteredHotels = filterHotelsByVote($filteredHotels, $_GET['vote']);
+if ($_GET["vote"]) {
+  $filteredHotels = filterHotelsByVote($hotels, $_GET['vote']);
 } else {
   $filteredHotels = $hotels;
 }
