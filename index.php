@@ -38,6 +38,19 @@ $hotels = [
 
 ];
 
+function filterHotelsByParking($hotels, $parking) {
+
+  $filteredHotels = [];
+
+  foreach ($hotels as $hotel) {
+    
+    if ($hotel['parking'] === $parking) {
+      $filteredHotels[] = $hotel;
+    }
+  }
+  return $filteredHotels;
+}
+
 ?>
 
 
