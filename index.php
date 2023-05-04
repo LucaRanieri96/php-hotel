@@ -38,23 +38,25 @@ $hotels = [
 
 ];
 
-function filterHotelsByParking($hotels, $parking) {
-  
+function filterHotelsByParking($hotels, $parking)
+{
+
   $filteredHotels = [];
-  
+
   foreach ($hotels as $hotel) {
-    
+
     if ($hotel['parking']) {
       $filteredHotels[] = $hotel;
     }
   }
   return $filteredHotels;
 }
-function filterHotelsByVote($hotels, $vote) {
+function filterHotelsByVote($hotels, $vote)
+{
   $filteredHotels = [];
 
   foreach ($hotels as $hotel) {
-    if ($hotel['vote'] == $vote) {
+    if ($hotel['vote'] >= $vote) {
       $filteredHotels[] = $hotel;
     }
   }
@@ -66,12 +68,10 @@ if ($_GET["parking"]) {
   $filteredHotels = filterHotelsByParking($hotels, $_GET['parking']);
 } else {
   $filteredHotels = $hotels;
-}
+};
 
-if ($_GET["vote"]) {
-  $filteredHotels = filterHotelsByVote($hotels, $_GET['vote']);
-} else {
-  $filteredHotels = $hotels;
+if ($_GET["vote"] && isset($filteredHotels)) {
+  $filteredHotels = filterHotelsByVote($filteredHotels, $_GET['vote']);
 }
 
 ?>
